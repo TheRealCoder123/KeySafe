@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">KeySafe</string>
+    <string name="why_is_master_password_important">A master password for a password vault app is like a secure key that guards access to all your valuable keys, ensuring only you can unlock and use them.</string>
+    <string name="hide_show_password">Hide/Show Password</string>
+    <string name="confirm_master_password">Confirm Master Password</string>
+    <string name="pin_optional">PIN (Optional)</string>
+    <string name="master_password">Master Password</string>
+    <string name="setup_biometrics">Setup Biometrics</string>
+    <string name="continue_">Continue</string>
+    <string name="faq">FAQ</string>
+    <string name="first_screen_text">Welcome to KeySafe, your digital fortress for safeguarding your precious online credentials. KeySafe is designed with your security in mind, providing a secure haven for all your passwords. Start your journey to simplified and fortified online security with KeySafe.</string>
+    <string name="welcome_to_keysafe">Welcome to KeySafe!</string>
+    <string name="your_digital_vault">Your Digital Vault</string>
+    <string name="second_screen_text">KeySafe is your comprehensive solution for password management. In today\'s interconnected world, managing multiple passwords can be overwhelming. With KeySafe, you can effortlessly centralize, organize, and retrieve all your passwords within a secure digital vault. Bid farewell to password-related worries as KeySafe empowers you to create robust, one-of-a-kind passwords for each of your accounts, fortifying your online defenses.</string>
+    <string name="your_security_matters">Your Security Matters</string>
+    <string name="third_screen_text">At KeySafe, your security is our utmost priority. We\'ve implemented cutting-edge encryption techniques to ensure that your sensitive data remains impervious to unauthorized access. Enjoy the convenience of biometric login options, including fingerprint and face recognition, adding an additional layer of protection to your digital sanctuary. KeySafe also provides in-app security insights, educating you on the best practices for staying secure online. Your peace of mind is our unwavering commitment.</string>
 </resources>
