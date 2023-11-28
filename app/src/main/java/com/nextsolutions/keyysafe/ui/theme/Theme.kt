@@ -12,6 +12,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
+import com.nextsolutions.keyysafe.common.util.AppTheme
 import com.upnext.notabox.presentation.ui.theme.Spaces
 import com.upnext.notabox.presentation.ui.theme.Typography
 
@@ -26,17 +27,17 @@ private val DarkColors = darkColors(
     secondary = Orange,
     text = White,
     description = Gray,
-    selected = LightGreen,
+    selected = Color(0xFF4A554D),
     onSelected = Black,
     unSelected = LightOrange,
     onUnSelected = Black,
     checkBoxBorder = Orange,
     checkBoxChecked = Orange,
     onCheckBoxChecked = Black,
-    searchTFBackground = Green,
+    searchTFBackground = BlackLighter,
     onSearchTFBackground = White,
-    dialogBgColor = DarkerGray,
-    drawerBgColor = DarkerGray
+    dialogBgColor = Color(0xFF3C413B),
+    drawerBgColor = Color(0xFF3C413B)
 
 )
 private val LightColors = lightColors(
@@ -49,18 +50,17 @@ private val LightColors = lightColors(
     secondary = Orange,
     text = Color.Black,
     description = Gray,
-    selected = LightGreen,
+    selected = Color(0xFFD2E8D3),
     onSelected = Black,
     unSelected = LightOrange,
     onUnSelected = Black,
     checkBoxBorder = Orange,
     checkBoxChecked = Orange,
     onCheckBoxChecked = Black,
-    searchTFBackground = Green,
-    onSearchTFBackground = White,
-    dialogBgColor = White,
-    drawerBgColor = White
-
+    searchTFBackground = GrayLighter,
+    onSearchTFBackground = Color.Black,
+    dialogBgColor = Color(0xFFE9EEE8),
+    drawerBgColor = Color(0xFFE9EEE8)
 )
 
 val LocalSpaces = staticCompositionLocalOf { Spaces() }
@@ -91,18 +91,48 @@ object KeySafeTheme {
 fun KeySafeTheme(
     spaces: Spaces = KeySafeTheme.spaces,
     typography: Typography = KeySafeTheme.typography,
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    appTheme: AppTheme,
+    showNavBarColor: Boolean,
     content: @Composable () -> Unit,
 ) {
 
-    val currentColors = remember { if (darkTheme) DarkColors else LightColors }
+    val isDarkTheme = isSystemInDarkTheme()
+
+    val currentColors = when(appTheme){
+        AppTheme.System -> {
+            if (isDarkTheme) DarkColors else LightColors
+        }
+        AppTheme.Dark -> {
+            DarkColors
+        }
+        AppTheme.Light -> {
+            LightColors
+        }
+    }
+
     val rememberedColors = remember { currentColors.copy() }.apply { updateColorsFrom(currentColors) }
+
 
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
             window.statusBarColor = Green.toArgb()
+            if (showNavBarColor){
+                window.navigationBarColor = Green.toArgb()
+            }else{
+                when(appTheme){
+                    AppTheme.System -> {
+                        window.navigationBarColor = if (isDarkTheme) Black.toArgb() else White.toArgb()
+                    }
+                    AppTheme.Dark -> {
+                        window.navigationBarColor = Black.toArgb()
+                    }
+                    AppTheme.Light -> {
+                        window.navigationBarColor = White.toArgb()
+                    }
+                }
+            }
         }
     }
 

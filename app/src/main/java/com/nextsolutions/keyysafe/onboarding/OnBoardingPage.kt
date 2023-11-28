@@ -13,6 +13,7 @@ sealed class OnBoardingPage(
     val text: Int
 ) {
 
+
     object First : OnBoardingPage(
         animation = R.raw.first_screen_anim,
         title = R.string.welcome_to_keysafe,

@@ -1,22 +1,24 @@
 package com.nextsolutions.keyysafe.auth.ui.AuthSetupScreen
 
+import android.security.keystore.KeyGenParameterSpec
+import android.security.keystore.KeyProperties
+import android.util.Base64
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.nextsolutions.keyysafe.common.PasswordChecker
-import com.nextsolutions.keyysafe.common.data.data_store.DataStoreKeys
-import com.nextsolutions.keyysafe.common.data.data_store.DataStoreManager
+import com.nextsolutions.keyysafe.common.password_manager.PasswordChecker
 import com.nextsolutions.keyysafe.common.data.preferences.PreferencesKeys
 import com.nextsolutions.keyysafe.common.data.preferences.PreferencesManager
+import com.nextsolutions.keyysafe.common.password_manager.PasswordEncrypt
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
+import javax.crypto.Cipher
+import javax.crypto.KeyGenerator
 import javax.inject.Inject
 
 @HiltViewModel
 class AuthSetupViewModel @Inject constructor(
-    private val prefs: PreferencesManager
+    private val prefs: PreferencesManager,
 ) : ViewModel() {
 
     var masterPasswordState by mutableStateOf("")

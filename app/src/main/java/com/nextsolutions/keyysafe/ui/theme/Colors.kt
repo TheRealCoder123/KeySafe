@@ -25,7 +25,7 @@ class Colors(
     searchTFBackground: Color,
     onSearchTFBackground: Color,
     dialogBgColor: Color,
-    drawerBgColor: Color
+    drawerBgColor: Color,
 ) {
 
     var primary by mutableStateOf(primary)
@@ -86,7 +86,7 @@ class Colors(
     var dialogBgColor by mutableStateOf(dialogBgColor)
         private set
 
-    var drawerBgColor by mutableStateOf(drawerBgColor)
+    var drawerBgColor: Color by mutableStateOf(drawerBgColor)
         private set
 
 
@@ -153,6 +153,8 @@ class Colors(
         onCheckBoxChecked = other.onCheckBoxChecked
         searchTFBackground = other.searchTFBackground
         onSearchTFBackground = other.onSearchTFBackground
+        drawerBgColor = other.drawerBgColor
+        dialogBgColor = other.dialogBgColor
     }
 
 }

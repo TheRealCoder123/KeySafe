@@ -1,0 +1,16 @@
+package com.nextsolutions.keyysafe.analytics.ui.password_age_meter_anlytics_screen
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import com.nextsolutions.keyysafe.ui.theme.KeySafeTheme
+
+@Composable
+fun PasswordAgeMeter() {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+        Text(text = "Password Age Meter", color = KeySafeTheme.colors.text)
+    }
+}

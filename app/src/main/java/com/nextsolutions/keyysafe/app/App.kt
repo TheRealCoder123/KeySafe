@@ -1,33 +1,35 @@
 package com.nextsolutions.keyysafe.app
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.compose.rememberNavController
-import com.nextsolutions.keyysafe.common.data.data_store.DataStoreKeys
-import com.nextsolutions.keyysafe.common.data.data_store.DataStoreManager
-import com.nextsolutions.keyysafe.common.data.preferences.PreferencesKeys
-import com.nextsolutions.keyysafe.common.data.preferences.PreferencesManager
+import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import com.nextsolutions.keyysafe.app.graphs.MainNavigation
+import com.nextsolutions.keyysafe.auth.domain.enums.AuthScreenUsability
 import com.nextsolutions.keyysafe.ui.theme.KeySafeTheme
-import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun App(
-    mainViewModel: MainViewModel = hiltViewModel()
+    mainViewModel: MainViewModel
 ) {
-    KeySafeTheme {
-        val navHostController = rememberNavController()
+    KeySafeTheme(
+        appTheme = mainViewModel.settingsState.theme,
+        showNavBarColor = mainViewModel.navBarColor
+    ) {
+        val navHostController = rememberAnimatedNavController()
+
+
+        if (mainViewModel.shouldOpenAuthScreen &&
+            mainViewModel.dataStoreOpenAuthScreen &&
+            navHostController.currentDestination?.route != MainNavigation.AuthScreen.passScreenUsability(AuthScreenUsability.RE_AUTHENTICATE)
+            && mainViewModel.isAuthSetup
+            ){
+            navHostController.navigate(MainNavigation.AuthScreen.passScreenUsability(AuthScreenUsability.RE_AUTHENTICATE))
+        }
 
         Box(
             modifier = Modifier
@@ -36,7 +38,8 @@ fun App(
         ) {
             MainNavigationGraph(
                 navHostController = navHostController,
-                isAuthSetup =  mainViewModel.isAuthSetup
+                isAuthSetup =  mainViewModel.isAuthSetup,
+                mainViewModel = mainViewModel
             )
         }
 

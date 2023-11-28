@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">KeySafe</string>
     <string name="why_is_master_password_important">A master password for a password vault app is like a secure key that guards access to all your valuable keys, ensuring only you can unlock and use them.</string>
@@ -14,4 +15,279 @@
     <string name="second_screen_text">KeySafe is your comprehensive solution for password management. In today\'s interconnected world, managing multiple passwords can be overwhelming. With KeySafe, you can effortlessly centralize, organize, and retrieve all your passwords within a secure digital vault. Bid farewell to password-related worries as KeySafe empowers you to create robust, one-of-a-kind passwords for each of your accounts, fortifying your online defenses.</string>
     <string name="your_security_matters">Your Security Matters</string>
     <string name="third_screen_text">At KeySafe, your security is our utmost priority. We\'ve implemented cutting-edge encryption techniques to ensure that your sensitive data remains impervious to unauthorized access. Enjoy the convenience of biometric login options, including fingerprint and face recognition, adding an additional layer of protection to your digital sanctuary. KeySafe also provides in-app security insights, educating you on the best practices for staying secure online. Your peace of mind is our unwavering commitment.</string>
+    <string name="continue_to_the_app">Continue to the app</string>
+    <string name="password">Password</string>
+    <string name="pin">PIN</string>
+    <string name="use_biometrics">Use Biometrics</string>
+    <string name="add_pin">Add PIN</string>
+    <string name="settings">Settings</string>
+    <string name="nav_icon">Navigation Drawer</string>
+    <string name="create_new_entry">Create new entry</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="crate_entry">Crate Entry</string>
+    <string name="edit_labels">Edit Labels</string>
+    <string name="add">Add</string>
+    <string name="done">Done</string>
+    <string name="label_title">Label Title\n</string>
+    <string name="All">All</string>
+    <string name="title">Title</string>
+    <string name="more">MORE</string>
+    <string name="set_a_label">Set a label</string>
+    <string name="attach_a_file">Attach a file</string>
+    <string name="attach_an_image">Attach an image</string>
+    <string name="add_new_field">Add new field</string>
+    <string name="all_labels">All Labels</string>
+    <string name="selected_label">Selected Label</string>
+    <string name="cancel">Cancel</string>
+    <string name="select_a_field_type">Select a field type</string>
+    <string name="value">Value</string>
+    <string name="question">Question?</string>
+    <string name="remove">Remove\n</string>
+    <string name="go_to_site">Go to site</string>
+    <string name="entry_field_removed">Entry Field removed</string>
+    <string name="undo">Undo</string>
+    <string name="entry_password_analysis">Entry password analysis</string>
+    <string name="brief_analysis_of_how_many_of_your_passwords_are_weak_medium_and_strong">Brief analysis of how many of your passwords are weak, medium and strong. Archived and moved to trash entries not included</string>
+    <string name="weak">Weak</string>
+    <string name="medium">Medium</string>
+    <string name="strong">Strong</string>
+    <string name="entries">Entries</string>
+    <string name="view_all">View All</string>
+    <string name="recent_entries">Recent entries</string>
+    <string name="close">Close</string>
+    <string name="search">Search</string>
+    <string name="search_dots">Search...</string>
+    <string name="all_weak_passwords">All weak passwords</string>
+    <string name="all_medium_passwords">All medium passwords</string>
+    <string name="all_strong_passwords">All strong passwords</string>
+    <string name="seems_like_you_do_not_have_any_strong_passwords">Seems like you do not have any strong passwords</string>
+    <string name="seems_like_you_dont_have_any_medium_passwords">Seems like you dont have any medium passwords</string>
+    <string name="good_job_seems_like_you_dont_have_any_weak_passwords_keep_it_that_way">Good job, seems like you dont have any weak passwords. Keep it that way!</string>
+    <string name="ooops_seems_like_you_dont_have_any_entries_saved_if_you_want_to_saved_click_the_fab_button">Ooops, seems like you dont have any entries saved if you want to saved click the fab button</string>
+    <string name="move_to_trash">Move to trash</string>
+    <string name="this_entry_is_moved_to_trash_where_it_can_be_deleted">This entry is moved to trash where it can be deleted.</string>
+    <string name="this_entry_will_be_archived">This entry will be archived.</string>
+    <string name="archive">Archive</string>
+    <string name="archived_password_analysis">Archived password analysis</string>
+    <string name="archived_entries">Archived entries</string>
+    <string name="displaying_how_many_percentages_of_your_entries_are_archived">Displaying how many percentages of your entries are archived. Entries in trash not included</string>
+    <string name="you_have_no_recent_entries">You have no recent entries</string>
+    <string name="total_archived_entries">Total archived entries: %1$s</string>
+    <string name="brief_analysis_of_how_many_passwords_are_weak_medium_and_strong_in_your_archive">Brief analysis of how many passwords are weak, medium and strong in your archive</string>
+    <string name="trash">Trash</string>
+    <string name="maximum_trash_space_available_is_150_entries">Maximum trash space available is 150 entries.</string>
+    <string name="trash_available_space">Trash available space</string>
+    <string name="all_entries_that_have_been_moved_to_trash_archived_not_included">All entries that have been moved to trash. Archived not included</string>
+    <string name="moved_to_trash_entries">Moved to trash entries</string>
+    <string name="total_entries">"Total entries: "</string>
+    <string name="entries_in_trash">Entries in trash</string>
+    <string name="total_entries_with_concatination">Total entries: %1$s</string>
+    <string name="appearance">Appearance</string>
+    <string name="security">Security</string>
+    <string name="auto_fill">Auto-Fill</string>
+    <string name="database">Database</string>
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="edit_label">Edit label</string>
+    <string name="delete_label">Delete label</string>
+    <string name="label_name">Label name</string>
+    <string name="please_enter_the_label_title_first">Please enter the label title first!</string>
+    <string name="remove_from_trash">Remove from trash</string>
+    <string name="delete_entry">Delete entry</string>
+    <string name="app_theme">App Theme</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="system_theme">System Theme</string>
+    <string name="theme">Theme</string>
+    <string name="show_archived_and_trashed_entries_passwords_on_the_dashboard_screen">Show archived and trashed entries/passwords on the dashboard screen</string>
+    <string name="archived_trashed_entries"><![CDATA[Archived & Trashed entries]]></string>
+    <string name="opens_the_drawer_which_displays_all_the_labels">Opens the drawer which displays all the labels</string>
+    <string name="open_labels_on_start">Open labels on start</string>
+    <string name="notification">Notification</string>
+    <string name="show_a_notification_whenever_the_app_is_open">Show a notification whenever the app is open</string>
+    <string name="uses_the_current_theme_main_color_and_applies_it_on_the_navigation_bar">Uses the current theme main color and applies it on the navigation bar</string>
+    <string name="navigation_bar_color">Navigation bar color</string>
+    <string name="open_authentication_screen_when_you_come_back_from_to_the_app">Open authentication screen when you come back from to the app</string>
+    <string name="authentication_screen">Authentication screen</string>
+    <string name="change_master_password">Change master password</string>
+    <string name="for_this_feature_a_compatible_device_is_required_you_can_log_in_the_application_with_biometrics_like_fingerprint_and_face_recognition">For this feature a compatible device is required, you can log in the application with biometrics like fingerprint and face recognition</string>
+    <string name="biometric_authentication">Biometric authentication</string>
+    <string name="allow_screenshots">Allow Screenshots</string>
+    <string name="you_can_allow_screenshots_to_be_taken_of_your_app_but_remember_this_could_resolve_in_bad_consequences">You can allow screenshots to be taken of your app, but remember this could resolve in bad consequences</string>
+    <string name="pin_authentication">PIN authentication</string>
+    <string name="this_feature_is_useful_if_you_have_forgotten_your_master_password_you_can_also_login_with_the_pin">This feature is useful if you have forgotten your master password, you can also login with the pin.</string>
+    <string name="do_not_change_your_password_too_often_you_might_forget_it">Do not change your password too often, you might forget it.</string>
+    <string name="app_version">App Version</string>
+    <string name="rate_and_review">Rate and review</string>
+    <string name="suggest_a_feature">Suggest a feature</string>
+    <string name="report_a_bug">Report a bug</string>
+    <string name="backup_database">Backup Database</string>
+    <string name="create_a_backup_of_the_database">Create a backup of the database in an encrypted format.</string>
+    <string name="restore_database">Restore Database</string>
+    <string name="restore_a_backup_of_the_database">Restore a backup of the encrypted database.</string>
+    <string name="auto_backup">Auto Backup</string>
+    <string name="old_master_password">Old Master Password</string>
+    <string name="new_master_password">New Master Password</string>
+    <string name="confirm_new_master_password">Confirm New Master Password</string>
+    <string name="please_enter_your_old_master_password">Please enter your old master password</string>
+    <string name="please_enter_your_new_master_password">Please enter your new master password</string>
+    <string name="please_confirm_your_new_master_password">Please confirm your new master password</string>
+    <string name="your_new_master_passwords_do_not_match">Your new master passwords do not match</string>
+    <string name="please_enter_the_right_old_master_password">Please enter the right old master password</string>
+    <string name="change_with_pin">Change with pin</string>
+    <string name="please_enter_your_master_password_or_pin">Please enter your master password or pin.</string>
+    <string name="correct_authentication_details">Correct authentication details</string>
+    <string name="your_master_password_has_been_successfully_changed">Your master password has been successfully changed</string>
+    <string name="biometric_hardware_error">Biometric hardware error</string>
+    <string name="none_biometric_hardware_enrolled">You do not have any biometric entrolled.</string>
+    <string name="no_biometric_hardware">You do not have biometric hardware.</string>
+    <string name="biometric_update">Security update required</string>
+    <string name="biometric_hardware_not_supported">Biometric hardware not supported.</string>
+    <string name="biometric_hardware_status_unknown">Biometric status unknown.</string>
+    <string name="no_mail_app_found">No mail app found</string>
+    <string name="there_was_an_error_oppening_mail_apps">There was an error opening mail apps.</string>
+    <string name="select_mail_app">Select an a mail application.</string>
+    <string name="enter_your_old_master_password_or_your_pin">Enter your old master password or your pin</string>
+    <string name="password_is_strong">Password is strong</string>
+    <string name="password_is_medium">Password is medium</string>
+    <string name="password_is_weak">Password is weak</string>
+    <string name="file">file</string>
+    <string name="select_a_file">Select a file</string>
+    <string name="select_a_file_you_want_to_restore">Select a backup you want to restore</string>
+    <string name="share_database">Share database</string>
+    <string name="sharing_your_entry_database_in_a_encrypted_format">Sharing your entry database in a encrypted format.</string>
+    <string name="select_a_backup_you_want_to_share">Select a backup you want to share.</string>
+    <string name="seems_like_you_dont_have_any_backups">Seems like you dont have any backups.</string>
+    <string name="file_name">File name</string>
+    <string name="successfully_backed_up_database">Successfully backed up database.</string>
+    <string name="password_generator">Password Generator</string>
+    <string name="generated_password">Generated Password</string>
+    <string name="password_length">Password Length</string>
+    <string name="characters_customizations">Characters Customizations</string>
+    <string name="easy_to_say">Easy to say</string>
+    <string name="avoid_numbers_and_special_characters">Avoid numbers and special characters.</string>
+    <string name="easy_to_read">Easy to read</string>
+    <string name="avoid_ambiguous_characters_like_i_1_o_and_0">Avoid ambiguous characters like I, 1, O and 0.</string>
+    <string name="all_characters">All Characters</string>
+    <string name="any_characters_combinations_like_7_h_k_and_i1">Any characters combinations like !, 7, h, K and I1.</string>
+    <string name="symbols">Symbols</string>
+    <string name="other_customizations">Other Customizations</string>
+    <string name="password_copied">Password copied</string>
+    <string name="re_generate">Re-Generate</string>
+    <string name="successful_restored_database_from_file">Successful restored database from file</string>
+    <string name="post_notification_permission_is_not_granted">Post notification permission is not granted</string>
+    <string name="undo_fields">Undo Fields %1$s</string>
+    <string name="with_this_feature_everyone_accessing_this_entry_would_need_to_authenticate">With this feature everyone accessing this entry would need to authenticate.</string>
+    <string name="ask_for_authentication">Ask for authentication</string>
+    <string name="unarchive">UnArchive</string>
+    <string name="restore_from_trash">Restore From Trash</string>
+    <string name="menu">Menu</string>
+    <string name="move_out">Move Out</string>
+    <string name="delete">Delete</string>
+    <string name="automatically_fill_password_in_to_websites_and_applications">Automatically fill password in to websites and applications.</string>
+    <string name="not_now">Not Now</string>
+    <string name="why_is_autofill_useful">Why is Autofill useful</string>
+    <string name="seems_like_you_do_not_have_autofill_for_keysafe_click_and_turn_it_on">Seems like you do not have autofill for KeySafe, click and turn it on.</string>
+    <string name="autofill_service">Autofill Service</string>
+    <string name="trash_storage_is_full">Trash storage is full</string>
+    <string name="trash_is_full_delete_some_entries">Trash is full, delete some entries</string>
+    <string name="trash_is_full">Trash is full</string>
+    <string name="please_delete_some_entries_you_have_in_trash_to_be_able_to_store_in_it_again">Please delete some entries you have in trash to be able to store in it again.</string>
+    <string name="labels">Labels</string>
+    <string name="all_added_labels">All added labels</string>
+    <string name="use_capital_letters_a_z">Use capital letters (A-Z)</string>
+    <string name="use_digits">Use digits (0-9)</string>
+    <string name="characters">Characters</string>
+    <string name="words">Words</string>
+    <string name="words_count">Words count</string>
+    <string name="separate_words_with">Separate words with</string>
+    <string name="generate_password">Generate Password</string>
+    <string name="app_language">App Language</string>
+    <string name="italian">Italian</string>
+    <string name="macedonian">Macedonian</string>
+    <string name="english">English</string>
+    <string name="selected_language">Selected Language</string>
+    <string name="_1_time_saver">"1. Time Saver: "</string>
+    <string name="autofill_speeds_data_entry">Autofill speeds data entry.</string>
+    <string name="_2_error_minimizer">"2. Error Minimizer: "</string>
+    <string name="reduces_user_mistakes">Reduces user mistakes.</string>
+    <string name="_3_enhanced_security">"3. Enhanced Security: "</string>
+    <string name="safely_stores_sensitive_info">Safely stores sensitive info.</string>
+    <string name="turn_on_autofill_on_keysafe">Turn on autofill on KeySafe</string>
+    <string name="open">"Open "</string>
+    <string name="autofill_service_capital">"Autofill Service "</string>
+    <string name="in_your_device_settings">in your device settings</string>
+    <string name="select">"Select "</string>
+    <string name="as_">" as "</string>
+    <string name="in_the_list">in the list</string>
+    <string name="confirm_you_that_you_trust_the_app">Confirm you that you trust the app</string>
+    <string name="file_password">File Password</string>
+    <string name="permission_denied">Permission denied</string>
+    <string name="your_backups">Your backups</string>
+    <string name="create_auto_backups_of_an_encrypted_database_the_app_automatically_saves_and_updates_the_backup_file">Create auto backups of an encrypted database. The app automatically saves and updates the backup file</string>
+    <string name="restore">Restore</string>
+    <string name="restore_data">Restore Data</string>
+    <string name="all_entries">All Entries</string>
+    <string name="view_file">View File</string>
+    <string name="you_can_t_view_entries_here">You can\'t view entries here</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="filter">Filter</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="search_entries">Search entries...</string>
+    <string name="analytics">Analytics</string>
+    <string name="overview">Overview</string>
+    <string name="by_entry">By Entry</string>
+    <string name="select_an_entry_you_want_to_check_by">Select an entry you want to check by.</string>
+    <string name="analytics_screen">Analytics Screen</string>
+    <string name="brute_force_resistance">Brute Force Resistance</string>
+    <string name="unique_password">Unique Password</string>
+    <string name="password_diversity_checker">Password Diversity Checker</string>
+    <string name="password_age_meter">Password Age Meter</string>
+    <string name="password_strength_checker">Password Strength Checker</string>
+    <string name="german">German</string>
+    <string name="portuguese">Portuguese</string>
+    <string name="spanish">Spanish</string>
+    <string name="serbian">Serbian</string>
+    <string name="please_grant_the_permission_for_the_app_to_manage_all_files">Please grant the permission for the app to manage all files</string>
+    <string name="grant">Grant</string>
+    <string name="grant_the_allow_managemnt_of_all_files_permission_for_to_be_able_to_use_the_database">Grant the Allow managemnt of all files permission for to be able to use the database</string>
+    <string name="invalid_url">Invalid url</string>
+    <string name="frequently_asked_questions" translatable="false">Frequently Asked Questions</string>
+    <string name="q_i_forgot_my_master_password" translatable="false">Q: I Forgot my master password?</string>
+    <string name="a_if_you_ve_forgotten_your_master_password_don_t_worry_while_it_s_not_recoverable_you_can_restore_your_data_if_you_ve_saved_a_backup_file_make_use_of_your_backup_file_to_recover_your_precious_data" translatable="false">A: If you\'ve forgotten your master password, don\'t worry. While it\'s not recoverable, you can restore your data if you\'ve saved a backup file. Make use of your backup file to recover your precious data.</string>
+    <string name="q_how_can_i_transfer_my_data_to_a_new_device" translatable="false">Q: How can I transfer my data to a new device?</string>
+    <string name="a_we_ve_got_you_covered_our_app_offers_an_excellent_file_backup_system_with_encryption_you_can_back_up_all_your_entries_to_a_file_saved_on_your_local_phone_storage_then_transfer_this_file_to_your_new_device_and_easily_restore_your_data_from_it" translatable="false">A: We\'ve got you covered! Our app offers an excellent file backup system with encryption. You can back up all your entries to a file saved on your local phone storage. Then, transfer this file to your new device and easily restore your data from it.</string>
+    <string name="q_how_can_i_recover_my_data_after_a_device_reset" translatable="false">Q: How can I recover my data after a device reset?</string>
+    <string name="a_our_app_provides_a_robust_encrypted_file_backup_system_for_such_situations_you_can_save_all_your_entries_in_one_file_or_use_the_one_that_keysafe_automatically_creates_this_way_you_can_recover_your_data_on_the_same_device_or_on_another_one" translatable="false">A: Our app provides a robust, encrypted file backup system for such situations. You can save all your entries in one file or use the one that KeySafe automatically creates. This way, you can recover your data on the same device or on another one.</string>
+    <string name="q_is_there_an_automatic_backup_feature_in_keysafe" translatable="false">Q: Is there an automatic backup feature in KeySafe?</string>
+    <string name="a_yes_we_ve_got_your_back_keysafe_features_an_automatic_backup_system_that_creates_a_backup_of_all_your_entries_in_a_file_named_keysafe_auto_backup_enc_this_file_is_also_encrypted_and_the_app_updates_it_every_30_minutes_if_changes_are_made_you_can_also_choose_to_turn_this_feature_off" translatable="false">A: Yes, we\'ve got your back! KeySafe features an automatic backup system that creates a backup of all your entries in a file named \'Keysafe_Auto_Backup.enc.\' This file is also encrypted, and the app updates it every 30 minutes if changes are made. You can also choose to turn this feature off.</string>
+    <string name="q_does_keysafe_have_a_password_generator" translatable="false">Q: Does KeySafe have a password generator?</string>
+    <string name="a_absolutely_keysafe_comes_with_a_password_generator_you_can_find_it_in_the_menu_under_password_generator" translatable="false">A: Absolutely! KeySafe comes with a password generator. You can find it in the menu under \'Password Generator.\'</string>
+    <string name="a_the_label_system_in_keysafe_is_simple_and_effective_you_can_assign_a_label_to_an_entry_for_example_you_can_create_a_label_called_personal_accounts_and_organize_all_your_personal_accounts_under_this_label" translatable="false">A: The label system in KeySafe is simple and effective. You can assign a label to an entry. For example, you can create a label called \'Personal Accounts\' and organize all your personal accounts under this label.</string>
+    <string name="q_tell_me_more_about_the_label_system_in_keysafe_how_does_it_work" translatable="false">Q: Tell me more about the label system in KeySafe. How does it work?</string>
+    <string name="q_is_keysafe_available_in_multiple_languages" translatable="false">Q: Is KeySafe available in multiple languages?</string>
+    <string name="a_yes_our_app_supports_multiple_languages_including_english_default_macedonian_german_portuguese_spanish_serbian_and_more_languages_are_on_the_way" translatable="false">A: Yes, our app supports multiple languages, including English (Default), Macedonian, German, Portuguese, Spanish, Serbian, and more languages are on the way.</string>
+    <string name="q_what_is_the_purpose_of_the_trash_storage_in_keysafe_and_why_is_it_limited_to_150_entries" translatable="false">Q: What is the purpose of the trash storage in KeySafe, and why is it limited to 150 entries?</string>
+    <string name="a_the_purpose_of_limiting_the_trash_storage_to_150_entries_is_to_manage_space_efficiently_as_you_add_more_entries_to_the_trash_they_consume_storage_space_imagine_having_1000_entries_in_the_trash_that_would_be_quite_overwhelming_this_is_why_we_set_a_limit_but_you_can_always_delete_entries_from_the_trash_to_free_up_space" translatable="false">A: The purpose of limiting the trash storage to 150 entries is to manage space efficiently. As you add more entries to the trash, they consume storage space. Imagine having 1000 entries in the trash; that would be quite overwhelming. This is why we set a limit, but you can always delete entries from the trash to free up space.</string>
+    <string name="q_is_there_a_way_to_customize_or_change_the_limit_of_trash_storage_in_keysafe" translatable="false">Q: Is there a way to customize or change the limit of trash storage in KeySafe?</string>
+    <string name="a_no_the_limit_of_trash_storage_is_not_customizable" translatable="false">A: No, the limit of trash storage is not customizable.</string>
+    <string name="q_how_do_i_change_my_master_password" translatable="false">Q: How do I change my master password?</string>
+    <string name="a_changing_your_master_password_is_easy_go_to_settings_security_change_master_password_to_update_it" translatable="false"><![CDATA[A: Changing your master password is easy. Go to \'Settings\' > \'Security\' > \'Change Master Password\' to update it.]]></string>
+    <string name="q_how_can_i_access_my_archived_entries_in_keysafe" translatable="false">Q: How can I access my archived entries in KeySafe?</string>
+    <string name="a_accessing_your_archived_entries_is_a_breeze_simply_go_to_the_menu_and_click_on_archive_archived_entries" translatable="false"><![CDATA[A: Accessing your archived entries is a breeze. Simply go to the menu and click on \'Archive\' > \'Archived Entries.\']]></string>
+    <string name="q_are_trashed_and_archived_entries_backed_up" translatable="false">Q: Are trashed and archived entries backed up?</string>
+    <string name="a_yes_all_entries_including_trashed_and_archived_ones_are_backed_up_in_the_backup_file_the_only_entries_not_backed_up_are_the_ones_you_ve_permanently_deleted" translatable="false">A: Yes, all entries, including trashed and archived ones, are backed up in the backup file. The only entries not backed up are the ones you\'ve permanently deleted.</string>
+    <string name="a_to_permanently_delete_entries_from_the_trash_go_to_the_trash_in_the_menu_then_select_all_trash_entries_you_ll_see_a_dialog_with_two_options_and_one_of_them_is_to_delete_the_entry_permanently" translatable="false">A: To permanently delete entries from the trash, go to the trash in the menu, then select \'All Trash Entries.\' You\'ll see a dialog with two options, and one of them is to delete the entry permanently.</string>
+    <string name="q_how_can_i_delete_entries_permanently_from_the_trash_storage_in_keysafe" translatable="false">Q: How can I delete entries permanently from the trash storage in KeySafe?</string>
+    <string name="min_8">Min: 8</string>
+    <string name="length">Length: %1$s</string>
+    <string name="max_64">Max: 64</string>
+    <string name="use_symbols">Use symbols (@,!,% ...)</string>
+    <string name="username">Username</string>
+    <string name="account">Account</string>
+    <string name="note">Note</string>
+    <string name="email">Email</string>
+    <string name="website">Website</string>
+    <string name="custom">Custom</string>
 </resources>

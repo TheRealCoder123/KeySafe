@@ -2,11 +2,22 @@ package com.nextsolutions.keyysafe.common.data.preferences
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.security.crypto.MasterKey
 
 class PreferencesManager(context: Context) {
-    private val sharedPreferences: SharedPreferences =
-        context.getSharedPreferences("KeySafePreferences", Context.MODE_PRIVATE)
 
+    private val masterKey: MasterKey = MasterKey.Builder(context)
+        .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+        .build()
+
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences("KeySafePreferencesData", Context.MODE_PRIVATE)
+//        EncryptedSharedPreferences.create(
+//        context,
+//        "KeySafePreferencesData",
+//        masterKey,
+//        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+//        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+//    )
 
     fun saveString(key: String, value: String) {
         val editor = sharedPreferences.edit()
@@ -34,7 +45,7 @@ class PreferencesManager(context: Context) {
         editor.apply()
     }
 
-    fun getInt(key: String, defaultValue: Boolean): Boolean {
+    fun getBool(key: String, defaultValue: Boolean): Boolean {
         return sharedPreferences.getBoolean(key, defaultValue)
     }
 

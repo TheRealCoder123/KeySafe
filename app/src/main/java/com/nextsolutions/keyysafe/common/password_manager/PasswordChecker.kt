@@ -1,4 +1,4 @@
-package com.nextsolutions.keyysafe.common
+package com.nextsolutions.keyysafe.common.password_manager
 
 class PasswordChecker {
     fun checkPasswordStrength(password: String): PasswordStrength {
@@ -23,7 +23,7 @@ class PasswordChecker {
             }
         }
 
-        return if (hasUppercase && hasLowercase && hasDigit && hasSpecialChar) {
+        return if (hasUppercase && hasLowercase && hasDigit && hasSpecialChar && password.length > minLength) {
             PasswordStrength.STRONG
         } else if ((hasUppercase || hasLowercase) && hasDigit) {
             PasswordStrength.MEDIUM
@@ -39,6 +39,12 @@ class PasswordChecker {
 
     enum class PasswordStrength {
         STRONG, MEDIUM, WEAK
+    }
+
+    companion object {
+        fun getPasswordStrengthByString(passStrength: String): PasswordStrength {
+            return PasswordStrength.valueOf(passStrength)
+        }
     }
 
 }

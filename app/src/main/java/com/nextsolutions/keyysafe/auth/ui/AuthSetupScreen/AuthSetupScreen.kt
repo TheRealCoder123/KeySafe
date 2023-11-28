@@ -27,7 +27,6 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -49,9 +48,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.nextsolutions.keyysafe.R
 import com.nextsolutions.keyysafe.app.graphs.SetupNavigation
-import com.nextsolutions.keyysafe.common.PasswordChecker
-import com.nextsolutions.keyysafe.common.data.preferences.PreferencesKeys
-import com.nextsolutions.keyysafe.common.data.preferences.PreferencesManager
+import com.nextsolutions.keyysafe.common.password_manager.PasswordChecker
 import com.nextsolutions.keyysafe.global_components.GreenButton
 import com.nextsolutions.keyysafe.global_components.OutlinedOrangeButton
 import com.nextsolutions.keyysafe.ui.theme.Green
@@ -70,7 +67,8 @@ fun AuthSetupScreen(
 
     val promptInfo = BiometricPrompt.PromptInfo.Builder()
         .setTitle("Authenticate to KeySafe")
-        .setAllowedAuthenticators(BIOMETRIC_STRONG or DEVICE_CREDENTIAL)
+        .setAllowedAuthenticators(BIOMETRIC_STRONG)
+        .setNegativeButtonText("Cancel")
         .build()
 
     val biometricPrompt = BiometricPrompt(activity, executor, object : BiometricPrompt.AuthenticationCallback() {
@@ -207,9 +205,9 @@ fun AuthSetupScreen(
                 if (viewModel.masterPasswordStrength != null){
                     Text(
                         text = when(viewModel.masterPasswordStrength){
-                            PasswordChecker.PasswordStrength.STRONG -> "Password is strong"
-                            PasswordChecker.PasswordStrength.MEDIUM -> "Password is medium"
-                            PasswordChecker.PasswordStrength.WEAK -> "Password is weak"
+                            PasswordChecker.PasswordStrength.STRONG -> stringResource(R.string.password_is_strong)
+                            PasswordChecker.PasswordStrength.MEDIUM -> stringResource(R.string.password_is_medium)
+                            PasswordChecker.PasswordStrength.WEAK -> stringResource(R.string.password_is_weak)
                             null -> "not detected"
                         },
                         color = when(viewModel.masterPasswordStrength){
