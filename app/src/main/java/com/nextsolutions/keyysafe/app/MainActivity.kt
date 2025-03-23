@@ -10,11 +10,15 @@ import androidx.activity.compose.setContent
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.FragmentActivity
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.work.PeriodicWorkRequest
+import androidx.work.WorkManager
 import com.nextsolutions.keyysafe.app.service.AppRunningService
 import com.nextsolutions.keyysafe.common.data.preferences.PreferencesManager
 import com.nextsolutions.keyysafe.settings.ui.Appearance.Language.LanguageConfig
 import com.nextsolutions.keyysafe.settings.ui.Appearance.Language.LanguageConfig.changeLanguage
+import com.nextsolutions.keyysafe.settings.ui.Database.workers.AutoBackupWorker
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.concurrent.TimeUnit
 
 
 @AndroidEntryPoint
@@ -39,20 +43,20 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreen()
 
-//        val autoBackUp = PeriodicWorkRequest.Builder(
-//            AutoBackupWorker::class.java,
-//            30,
-//            TimeUnit.MINUTES
-//        ).build()
+        val autoBackUp = PeriodicWorkRequest.Builder(
+            AutoBackupWorker::class.java,
+            6,
+            TimeUnit.HOURS
+        ).build()
 
         setContent {
             mainViewModel = hiltViewModel()
 
-//            if (mainViewModel.isAutoBackupOn){
-//                WorkManager.getInstance(this).enqueue(autoBackUp)
-//            }else{
-//                WorkManager.getInstance(this).cancelWorkById(autoBackUp.id)
-//            }
+            if (mainViewModel.isAutoBackupOn){
+                WorkManager.getInstance(this).enqueue(autoBackUp)
+            }else{
+                WorkManager.getInstance(this).cancelWorkById(autoBackUp.id)
+            }
 
             if (mainViewModel.openNotificationWhileRunning){
                 startService(Intent(this, AppRunningService::class.java))

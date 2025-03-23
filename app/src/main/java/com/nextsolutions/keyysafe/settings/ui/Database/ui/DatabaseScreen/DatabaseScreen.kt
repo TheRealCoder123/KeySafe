@@ -161,8 +161,12 @@ fun DatabaseScreen(
     BackupFileNameDialog(
         isVisible = viewModel.isBackupNameDialogVisible,
         onDone = { fileName ->
-            viewModel.backup(fileName, BACKUP_DATA_PASSWORD)
-            viewModel.isBackupNameDialogVisible = false
+            if (fileName.isNotEmpty()){
+                viewModel.backup(fileName.trim(), BACKUP_DATA_PASSWORD)
+                viewModel.isBackupNameDialogVisible = false
+            }else{
+                Toast.makeText(context, "Please enter a file name", Toast.LENGTH_SHORT).show()
+            }
         },
         onDismiss = {
             viewModel.isBackupNameDialogVisible = false

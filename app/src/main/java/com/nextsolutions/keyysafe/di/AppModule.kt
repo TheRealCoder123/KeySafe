@@ -1,6 +1,7 @@
 package com.nextsolutions.keyysafe.di
 
 import android.app.Application
+import android.app.NotificationManager
 import android.content.Context
 import androidx.room.Room
 import com.nextsolutions.keyysafe.analytics.data.repository.IAnalyticsRepository
@@ -149,5 +150,10 @@ object AppModule {
     @Singleton
     fun providePasswordGeneratorUseCase() = PasswordGeneratorUseCase()
 
+    @Provides
+    @Singleton
+    fun provideNotificationManager(@ApplicationContext context: Context): NotificationManager {
+        return context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    }
 
 }

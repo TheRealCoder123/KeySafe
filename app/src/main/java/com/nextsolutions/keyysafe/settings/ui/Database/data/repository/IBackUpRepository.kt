@@ -25,7 +25,6 @@ class IBackUpRepository @Inject constructor(
 
             try {
                 val dir = File(Environment.getExternalStorageDirectory(), "KeySafeBackup")
-                //val dir = File(context.getExternalFilesDir(null), "backup")
 
                 if (!dir.exists()) {
                     dir.mkdirs()

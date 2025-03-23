@@ -2,7 +2,6 @@ package com.nextsolutions.keyysafe.auth.ui.AuthSetupScreen
 
 import android.widget.Toast
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
-import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -19,12 +18,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material3.Text
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -273,7 +272,11 @@ fun AuthSetupScreen(
             OutlinedTextField(
                 modifier = Modifier.fillMaxWidth(),
                 value = viewModel.pinState,
-                onValueChange = { newPassword -> viewModel.pinState = newPassword },
+                onValueChange = { newPassword ->
+                    if (newPassword.length <= 4){
+                        viewModel.pinState = newPassword
+                    }
+                },
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     textColor = KeySafeTheme.colors.text,
                     cursorColor = if (viewModel.pinState.isEmpty()) Orange else Green,
@@ -287,7 +290,7 @@ fun AuthSetupScreen(
                         color = KeySafeTheme.colors.text
                     )
                 },
-                singleLine = true
+                singleLine = true,
             )
 
             Spacer(modifier = Modifier.height(KeySafeTheme.spaces.mediumLarge))

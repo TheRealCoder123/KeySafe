@@ -3,13 +3,15 @@ package com.nextsolutions.keyysafe.app.service
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.nextsolutions.keyysafe.R
 import com.nextsolutions.keyysafe.app.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AppRunningService : Service() {
 
     companion object {
@@ -18,6 +20,9 @@ class AppRunningService : Service() {
         const val channelId = "key_safe_notification"
 
     }
+
+    @Inject
+    lateinit var notificationManager: NotificationManager
 
 
     private val notificationId = 9918
@@ -34,7 +39,6 @@ class AppRunningService : Service() {
 
     override fun onTaskRemoved(rootIntent: Intent?) {
         super.onTaskRemoved(rootIntent)
-        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         notificationManager.cancel(notificationId)
         stopSelf()
     }
@@ -42,14 +46,14 @@ class AppRunningService : Service() {
     private fun showAppRunningNotification() {
 
         val mainActivityIntent = Intent(this, MainActivity::class.java)
-        mainActivityIntent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP // This flag ensures the activity isn't recreated.
+        mainActivityIntent.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
         val pendingIntent = PendingIntent.getActivity(this, 0, mainActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
 
 
         val notification = NotificationCompat.Builder(this,channelId)
             .setContentTitle("KeySafe")
             .setContentText("KeySafe app is running")
-            .setSmallIcon(R.drawable.baseline_app_settings_alt_24)
+            .setSmallIcon(R.drawable.keysafe_logo)
             .setPriority(NotificationManager.IMPORTANCE_DEFAULT)
             .setOngoing(true)
             .setContentIntent(pendingIntent)

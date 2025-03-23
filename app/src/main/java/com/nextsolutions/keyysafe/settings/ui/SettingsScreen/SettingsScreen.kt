@@ -3,8 +3,12 @@ package com.nextsolutions.keyysafe.settings.ui.SettingsScreen
 import android.Manifest
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
+import android.os.Environment
 import android.provider.Settings
 import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -17,21 +21,51 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.rememberMultiplePermissionsState
+import com.google.accompanist.permissions.rememberPermissionState
 import com.nextsolutions.keyysafe.R
 import com.nextsolutions.keyysafe.app.graphs.SettingsNavigation
-import com.nextsolutions.keyysafe.common.util.Other
 import com.nextsolutions.keyysafe.global_components.BackTopAppBar
 import com.nextsolutions.keyysafe.settings.domain.enums.SettingsItemType
 import com.nextsolutions.keyysafe.settings.domain.models.SettingsItem.Companion.getSettingsItems
 import com.nextsolutions.keyysafe.settings.ui.SettingsScreen.components.SettingsItem
 import com.nextsolutions.keyysafe.ui.theme.KeySafeTheme
 
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun SettingsScreen(
     navController: NavController
 ) {
 
     val context = LocalContext.current
+
+
+    val manageStoragePerm = rememberPermissionState(permission = Manifest.permission.MANAGE_EXTERNAL_STORAGE)
+    val writeReadStoragePerm = rememberMultiplePermissionsState(permissions = listOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE))
+
+    val requestPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) {
+        if (it.values.all { it }) {
+            Toast.makeText(context, "Permissions is granted", Toast.LENGTH_SHORT).show()
+            navController.navigate(SettingsNavigation.Database.route)
+        } else {
+            Toast.makeText(context, "Permissions is not granted", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    val manageAllFilesPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && Environment.isExternalStorageManager()) {
+            Toast.makeText(context, "Manage all files permission granted", Toast.LENGTH_SHORT).show()
+            navController.navigate(SettingsNavigation.Database.route)
+        } else {
+            Toast.makeText(context, "Manage all files permission not granted", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     Scaffold(
         backgroundColor = KeySafeTheme.colors.background,
@@ -66,18 +100,24 @@ fun SettingsScreen(
                                 navController.navigate(SettingsNavigation.Security.route)
                             }
                             SettingsItemType.Database -> {
-                                if (Other.hasPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)){
-                                    navController.navigate(SettingsNavigation.Database.route)
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R){
+                                    if (!Environment.isExternalStorageManager()){
+                                        val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
+                                        manageAllFilesPermissionLauncher.launch(intent)
+                                    }else{
+                                        navController.navigate(SettingsNavigation.Database.route)
+                                    }
                                 }else{
-                                    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                                    val uri = Uri.fromParts("package", context.packageName, null)
-                                    intent.data = uri
-                                    context.startActivity(intent)
-                                    Toast.makeText(
-                                        context,
-                                        context.getString(R.string.grant_the_allow_managemnt_of_all_files_permission_for_to_be_able_to_use_the_database),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
+                                    if (!writeReadStoragePerm.allPermissionsGranted){
+                                        requestPermissionLauncher.launch(
+                                            arrayOf(
+                                                Manifest.permission.READ_EXTERNAL_STORAGE,
+                                                Manifest.permission.WRITE_EXTERNAL_STORAGE
+                                            )
+                                        )
+                                    }else{
+                                        navController.navigate(SettingsNavigation.Database.route)
+                                    }
                                 }
                             }
                             SettingsItemType.About -> {
